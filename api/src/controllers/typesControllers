@@ -1,0 +1,23 @@
+// const axios = require("axios");
+// const {Tipo} = require("../db");
+
+//const getTypes = async(req,res) =>{
+    // let typesDb = await Tipo.findAll();
+    // if(typesDb.length===0){
+    //     const typesApi = await axios.get("https://pokeapi.co/api/v2/type")
+    //     let typesArray = typesApi.data.results.map ((e) => e.name)
+    //     typesArray = typesArray.join().split(',')
+    //     typesArray = typesArray.map(elem => elem.trim())
+    //     typesArray.forEach(async(elem)=>{
+    //         if(elem.length >0) {
+    //             await Tipo.findOrCreate({
+    //                 where: {name: p.name},
+    //             })
+    //         }
+    //     });   
+    //     const typesDB = await Tipo.findAll();
+    //     }
+    //     return typesDB;
+//}
+
+//module.exports = getTypes;
