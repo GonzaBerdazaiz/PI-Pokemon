@@ -6,12 +6,13 @@ module.exports = (sequelize) => {
   sequelize.define("tipo", {
     id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         primaryKey: true,
         autoIncrement: true,
     },
     name: {
         type: DataTypes.STRING,
-        unique: true,
+        allowNull: false,
     },
     },
     {

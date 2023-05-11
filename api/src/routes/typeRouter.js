@@ -1,8 +1,8 @@
-// const { Router } = require("express");
-// const {getTypesHandler} = require("../handlers/typesHandlers");
+const { Router } = require("express");
+const getTypesHandler = require("../handlers/typesHandlers");
 
-// const typeRouter = Router();
+const typeRouter = Router();
 
-// typeRouter.get("/", getTypesHandler);
+typeRouter.get("/", getTypesHandler);
 
-// module.exports = typeRouter;
+module.exports = typeRouter;
