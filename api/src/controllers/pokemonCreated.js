@@ -1,5 +1,4 @@
 const {Pokemon, Tipo} = require("../db");
-const { Op } = require("sequelize");
 
 const pokemonCreated = async(name, hp, attack, defense, speed, height, weight, types) => {
     const postPokemon = await Pokemon.create({
@@ -16,7 +15,6 @@ const pokemonCreated = async(name, hp, attack, defense, speed, height, weight, t
         })
     await postPokemon?.addTipo(pokemonTypes);  
     return postPokemon;
-    
 }
 
 module.exports = pokemonCreated;

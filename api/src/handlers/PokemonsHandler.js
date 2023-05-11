@@ -3,12 +3,13 @@ const getPokemonById = require("../controllers/getPokemonById");
 const getPokemonByName = require("../controllers/getPokemonByName");
 const pokemonCreated = require("../controllers/pokemonCreated");
 
-const allPokemonsHandler = async(req,res) =>{
+const allPokemonsHandler = async(req,res)=>{
+    const { name } = req.query;
     try{
-        const getPokemons = await getAllPokemons();
-        res.status(200).json(getPokemons);
-    } catch(error){
-        res.status(404).json({error: error.message});
+        const pokemonName = name ? await getPokemonByName(name) : await getAllPokemons();
+        res.status(200).json(pokemonName);
+    }catch(error){
+        res.status(400).json({error: error.message});
     }
 }
 
@@ -26,16 +27,6 @@ const pokemonCreatedHandler = async (req,res) => {
     }
 }
 
-const pokemonByNameHandler = async(req,res)=>{
-    const { name } = req.query;
-    try{
-        const pokemonName = await getPokemonByName(name);
-        res.status(200).json(pokemonName);
-    }catch(error){
-        res.status(400).json({error: error.message});
-    }
-}
-
 const pokemonByIdHandler = async(req,res) => {
     const {id} = req.params;
     try {
@@ -48,4 +39,26 @@ const pokemonByIdHandler = async(req,res) => {
 }
 
 
-module.exports = {allPokemonsHandler, pokemonByIdHandler, pokemonByNameHandler, pokemonCreatedHandler};
+module.exports = {allPokemonsHandler, pokemonByIdHandler, pokemonCreatedHandler};
+
+
+// const allPokemonsHandler = async(req,res) =>{
+//     try{
+//         const getPokemons = await getAllPokemons();
+//         res.status(200).json(getPokemons);
+//     } catch(error){
+//         res.status(404).json({error: error.message});
+//     }
+// }
+
+// const pokemonByNameHandler = async(req,res)=>{
+//     const { name } = req.query;
+//     try{
+//         const pokemonName = await getPokemonByName(name);
+//         res.status(200).json(pokemonName);
+//     }catch(error){
+//         res.status(400).json({error: error.message});
+//     }
+// }
+
+//module.exports = {allPokemonsHandler, pokemonByIdHandler, pokemonByNameHandler, pokemonCreatedHandler};
