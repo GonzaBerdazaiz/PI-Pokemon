@@ -1,0 +1,50 @@
+.Landing{
+    height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../assets.img/3.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 70%;
+}
+/* .Landing {
+  height: 100vh;
+  background-color: rgba(11,11,11,255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../assets.img/973235.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 75%;
+} */
+
+.Home{
+    position: absolute;
+  top: 64.35%;
+  left: 49%;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 10px;
+  cursor: pointer;
+  transition: 1s ease;
+  color: white;
+  text-shadow: 0px 2px 7px rgba(96, 110, 240, 1);
+  animation-name: parpadeo;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-iteration-count: infinite;
+}
+.Home:hover {
+    scale: 5;
+  color: white;
+  text-shadow: 0px 2px 7px rgb(31, 217, 242, 1);
+  transition: 1s ease;
+  animation-duration: none;
+  animation-timing-function: none;
+  animation-iteration-count: none;
+}
