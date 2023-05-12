@@ -1,0 +1,60 @@
+.Container {
+    position: absolute;
+    top: 15%;
+    left: 28%;
+    background-color: #f9e878;
+    top: 5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+}
+  
+.Title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #2f3237;
+}
+
+label {
+    display: block;
+    color: #2f3237;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+  
+input[type="text"] {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid black;
+    outline: none;
+    font-size: 14px;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+button[type="submit"] {
+    background-color: #2f3237;
+    border: none;
+    border-radius: 3px;
+    color: rgb(110, 107, 107);
+    font-size: 14px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 20%;
+    margin-top: 5px;
+  }
+  
+  button[type="submit"]:hover {
+    scale: 1.1;
+    color: white;
+    transition: 0.5s ease;
+    cursor: pointer;
+  }

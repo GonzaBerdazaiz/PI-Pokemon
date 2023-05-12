@@ -25,26 +25,43 @@
 
 .Home{
     position: absolute;
-  top: 64.35%;
-  left: 49%;
+  top: 54.55%;
+  left: 48.7%;
   text-decoration: none;
   background-color: transparent;
-  font-size: 10px;
+  font-size: 8px;
   cursor: pointer;
   transition: 1s ease;
   color: white;
   text-shadow: 0px 2px 7px rgba(96, 110, 240, 1);
   animation-name: parpadeo;
   animation-duration: 1.5s;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .Home:hover {
-    scale: 5;
+  scale: 5;
   color: white;
   text-shadow: 0px 2px 7px rgb(31, 217, 242, 1);
   transition: 1s ease;
-  animation-duration: none;
-  animation-timing-function: none;
-  animation-iteration-count: none;
+  animation-name: parpadeo2;
+}
+@keyframes parpadeo2 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
