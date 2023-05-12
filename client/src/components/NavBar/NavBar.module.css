@@ -1,5 +1,6 @@
 .navContainer {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #fff;
   height: 80px;
@@ -21,7 +22,7 @@
   margin-right: 10px;
 }
 
-.linkContainer {
+.LeftContainer {
   display: flex;
   align-items: center;
   margin-left: 10px;
@@ -40,78 +41,20 @@
   color: white;
 }
 
-
-
-/* .navContainer {
+.RightContainer{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 90px;
-  border-bottom: 1px solid grey;
-}
-
-.leftSection {
-  display: flex;
-  align-items: center;
-
-  width: 260px;
-}
-
-.image {
-  background-image: url("../assets.img/pokebola-azul.webp");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
   margin-right: 10px;
-  margin-left: 40px;
-  border: none;
-  transition: 0.5s ease;
-}
-.image:hover {
-  transition: 0.5s;
-  background-size: 0;
 }
 
-.linkContainer {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-  width: 40px;
-}
-
-.link {
+.Contacto {
   text-decoration: none;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: black;
-  font-size: 15px;
-  transition: 0.5s ease;
-  padding:7.3px;
+  color: #333;
+  padding: 30px;
+  transition: color 0.5s ease;
 }
-
-.link:hover {
-  color: #f2f2f2;
-  background-color: rgba(246,166,86,255);
-  height: 10%;
-  transition: 0.5s ease;
+.Contacto:hover {
+  background-color: rgba(246,165,86,255);
+  transition: color 0.5s ease;
+  color: white;
 }
-.link2 {
-  text-decoration: none;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: black;
-  font-size: 15px;
-  transition: 0.5s ease;
-  padding:5px;
-}
-
-.link2:hover {
-  color: #f2f2f2;
-  background-color: rgba(246,166,86,255);
-  height: 10%;
-  transition: 0.5s ease;
-}
-
-.searchBar {
-  margin-right: 20px;
-} */

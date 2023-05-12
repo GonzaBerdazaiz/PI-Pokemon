@@ -1,9 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 //import { useDispatch } from "react-redux";
-import Landing from "./views/Landing/Landing";
-import Home from "./views/Home/Home";
 import NavBar from "./components/NavBar/NavBar";
-import Form from "./views/Form/Form";
+import {Landing, Home, Form, Contacto} from "./views";
 import style from "./App.module.css";
 
 function App() {
@@ -20,6 +18,7 @@ const location = useLocation();
         <Route path="/home" element={<Home />}></Route>
         {/* <Route path="/detail/:detailId"></Route> */}
         <Route path="/create" element={<Form />}></Route>
+        <Route path="/contact" element={<Contacto />}></Route>
       </Routes>
     </div>
   );

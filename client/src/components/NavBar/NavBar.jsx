@@ -7,7 +7,7 @@ const NavBar = () => {
       <div className={style.navContainer}>
         <div className={style.leftSection}>
           <div className={style.image} />
-          <div className={style.linkContainer}>
+          <div className={style.LeftContainer}>
             <Link to="/home" className={style.link}>
               Home
             </Link>
@@ -15,6 +15,11 @@ const NavBar = () => {
               Create
             </Link>
           </div>
+        </div>
+        <div className={style.RightContainer}>
+          <Link to="/contact" className={style.Contacto}>
+            Contact
+          </Link>
         </div>
         <SearchBar />
       </div>
