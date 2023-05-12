@@ -1,13 +1,13 @@
 const getAllPokemons = require("../controllers/getAllPokemons");
 const getPokemonById = require("../controllers/getPokemonById");
-const getPokemonByName = require("../controllers/getPokemonByName");
+const getPokemonsByName = require("../controllers/getPokemonsByName");
 const pokemonCreated = require("../controllers/pokemonCreated");
 
 const allPokemonsHandler = async(req,res)=>{
     const { name } = req.query;
     try{
-        const pokemonName = name ? await getPokemonByName(name) : await getAllPokemons();
-        res.status(200).json(pokemonName);
+        const response = name ? await getPokemonsByName(name) : await getAllPokemons();
+        res.status(200).json(response);
     }catch(error){
         res.status(400).json({error: error.message});
     }
@@ -54,7 +54,7 @@ module.exports = {allPokemonsHandler, pokemonByIdHandler, pokemonCreatedHandler}
 // const pokemonByNameHandler = async(req,res)=>{
 //     const { name } = req.query;
 //     try{
-//         const pokemonName = await getPokemonByName(name);
+//         const pokemonName = await getPokemonsByName(name);
 //         res.status(200).json(pokemonName);
 //     }catch(error){
 //         res.status(400).json({error: error.message});

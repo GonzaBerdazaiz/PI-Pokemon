@@ -11,7 +11,7 @@ const pokemonCreated = async(name, hp, attack, defense, speed, height, weight, t
         weight: weight,
     });
     const pokemonTypes = await Tipo.findAll({
-        where: { name: types},
+        where: { id: types},
         })
     await postPokemon?.addTipo(pokemonTypes);  
     return postPokemon;
