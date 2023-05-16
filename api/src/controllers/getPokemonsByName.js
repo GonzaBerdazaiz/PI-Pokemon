@@ -1,4 +1,4 @@
-const {Pokemon, Tipo} = require("../db")
+const {Pokemon, Type} = require("../db")
 const axios = require("axios");
 const { Op } = require("sequelize"); //operadores de sequelize
 
@@ -8,7 +8,7 @@ const getPokemonsByNameBD = async(name) =>{
             [Op.iLike]: `%${name}%`,
           }},
         include: [{
-            model: Tipo,
+            model: Type,
             attributes: ["name"],
             through: {
                 attributes: [],
@@ -25,17 +25,17 @@ const getPokemonsByNameApi = async(name) =>{
         const filteredByNamePokemons = await axios(`https://pokeapi.co/api/v2/pokemon/${name}`);
         if (filteredByNamePokemons.data) {
             response.push({
-                Id: filteredByNamePokemons.data.id,
+                id: filteredByNamePokemons.data.id,
                 Name: filteredByNamePokemons.data.name,
-                Image: filteredByNamePokemons.data.sprites.other.dream_world.front_default,
-                hp: filteredByNamePokemons.data.stats[0].base_stat,
+                image: filteredByNamePokemons.data.sprites.other.dream_world.front_default,
+                Hp: filteredByNamePokemons.data.stats[0].base_stat,
                 Attack: filteredByNamePokemons.data.stats[1].base_stat,
                 Defense: filteredByNamePokemons.data.stats[2].base_stat,
                 Speed: filteredByNamePokemons.data.stats[3].base_stat,
                 Height: filteredByNamePokemons.data.height,
                 Weight: filteredByNamePokemons.data.weight,
                 Types: filteredByNamePokemons.data.types.map((t) => { return {name: t.type.name}}),
-                created: false,
+                Created: false,
         })};
         return response;
     } catch (error){

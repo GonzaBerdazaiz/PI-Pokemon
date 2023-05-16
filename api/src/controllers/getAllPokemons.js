@@ -1,5 +1,5 @@
 const axios = require("axios");
-const {Pokemon, Tipo} = require("../db")
+const {Pokemon, Type} = require("../db")
 
 //TRAEMOS POKEMON DE LA API
 const getPokemonApi = async()=>{
@@ -10,15 +10,15 @@ const getPokemonApi = async()=>{
 
     const pokemonList = pokemonResponses.map(pokemonResponse => ({
         id: pokemonResponse.data.id,
-        Name: pokemonResponse.data.name,
-        Image: pokemonResponse.data.sprites.front_default,
-        Hp: pokemonResponse.data.stats[0].base_stat,
-        Attack: pokemonResponse.data.stats[1].base_stat,
-        Defense: pokemonResponse.data.stats[2].base_stat,
-        Speed: pokemonResponse.data.stats[5].base_stat,
-        Height: pokemonResponse.data.height,
-        Weight: pokemonResponse.data.weight,
-        Types: pokemonResponse.data.types.map((type) => ({
+        name: pokemonResponse.data.name,
+        image: pokemonResponse.data.sprites.front_default,
+        hp: pokemonResponse.data.stats[0].base_stat,
+        attack: pokemonResponse.data.stats[1].base_stat,
+        defense: pokemonResponse.data.stats[2].base_stat,
+        speed: pokemonResponse.data.stats[5].base_stat,
+        height: pokemonResponse.data.height,
+        weight: pokemonResponse.data.weight,
+        types: pokemonResponse.data.types.map((type) => ({
             name: type.type.name
         }))
     }));
@@ -29,7 +29,7 @@ const getPokemonApi = async()=>{
 const getPokemonDB = async()=>{ 
     const dbPokemon = await Pokemon.findAll({
         include: {
-          model: Tipo,
+          model: Type,
           attributes: ["name"],
           through: {
             attributes: [],

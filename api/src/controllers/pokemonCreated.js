@@ -1,4 +1,4 @@
-const {Pokemon, Tipo} = require("../db");
+const {Pokemon, Type} = require("../db");
 
 const pokemonCreated = async(name, hp, attack, defense, speed, height, weight, types) => {
     const postPokemon = await Pokemon.create({
@@ -10,10 +10,10 @@ const pokemonCreated = async(name, hp, attack, defense, speed, height, weight, t
         height: height,
         weight: weight,
     });
-    const pokemonTypes = await Tipo.findAll({
+    const pokemonTypes = await Type.findAll({
         where: { id: types},
         })
-    await postPokemon?.addTipo(pokemonTypes);  
+    await postPokemon?.addType(pokemonTypes);  
     return postPokemon;
 }
 
