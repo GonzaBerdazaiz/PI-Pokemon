@@ -1,0 +1,11 @@
+.searchBox {
+    display: flex;
+    align-items: center;  
+}
+
+.SearchInput {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid silver;
+    width:200%;
+}

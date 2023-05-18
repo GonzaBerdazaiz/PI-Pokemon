@@ -16,12 +16,12 @@ const NavBar = () => {
             </Link>
           </div>
         </div>
+        <SearchBar /> 
         <div className={style.RightContainer}>
           <Link to="/contact" className={style.Contacto}>
             Contact
           </Link>
         </div>
-        <SearchBar />
       </div>
     );
   };

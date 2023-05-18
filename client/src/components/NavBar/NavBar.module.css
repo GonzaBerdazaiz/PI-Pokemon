@@ -1,11 +1,15 @@
 .navContainer {
   display: flex;
+  position: fixed; /* Para fijar el NavBar */
+  top: 0; /* Con esto lo fijamos en la posicion 0 */
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
   height: 80px;
+  width: 100%;
   padding-left: 30px;
   border-bottom: 2px solid silver;
+  z-index:1
 }
 
 .leftSection {
@@ -49,6 +53,7 @@
 
 .Contacto {
   text-decoration: none;
+  margin-right: 20px;
   color: #333;
   padding: 30px;
   transition: color 0.5s ease;

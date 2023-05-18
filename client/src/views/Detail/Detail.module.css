@@ -1,0 +1,152 @@
+.DetailContainer{
+    background-image: url(../assets.img/fondo-pasto.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+.Detalles{
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    display: flex;
+    background-color: white;
+    width: 320px;
+    height: 370px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    color:dimgrey;
+}
+
+.DetailImage {
+    position: absolute;
+    left: 28%;
+    top: -31%;
+    width: 150px;
+    height: 150px;
+}
+
+.NameContainer{
+    height: 18%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.DetailName {
+    position: relative;
+    top: 10%;
+    font-size: 25px;
+    width: fit-content;
+    display: flex;
+    text-transform: capitalize;
+}
+
+
+.ContainerDetail{
+    height: 10%;
+}
+.DetailHp{
+    border: none;
+    border-top: 4px solid rgba(27,237,187,255);
+    border-radius: 40px;
+    margin-left: 25%;;
+    width: 50%;
+    height: 1%;
+    }
+.DetailHpSpan{
+    height: 50%;
+    width: 100%;
+    font-size: 13px;
+}
+
+.TypeWeightHeight{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+    width: 80%;
+    height: 30%;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(184,175,175);
+}
+.DetailTypes{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    justify-content: center;
+}
+.DetailWeight{
+    border-left: 2px solid rgba(184,175,175);
+    border-right: 2px solid rgba(184,175,175);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 34%;
+}
+.DetailHeight{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    justify-content: center;
+}
+.LettersTypeWeightHeight{
+    font-size: 12px;
+}
+
+.AttackContainer{
+    color:dimgrey;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.DefenseContainer{
+    color:dimgrey;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.SpeedContainer{
+    color:dimgrey;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.IdContainer {
+    color:dimgrey;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.BackHome{
+    display: flex;
+    justify-content: center;
+}
+.BomeButton{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: rgba(126,230,191,255);
+    background-color: rgba(24,135,146,255);
+    border: 3px solid rgba(126,230,191,255);
+    border-style:double;
+    transition: 0.5s ease;
+}
+.BomeButton:hover{
+    scale: 1.2;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
