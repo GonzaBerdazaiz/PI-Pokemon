@@ -19,42 +19,42 @@ const Detail =() =>{
 
     return (
         <div className={style.DetailContainer}>
-            {detail.name ? (
+            {!detail.name ? (
                 <Loading></Loading>
             ):(
                 <div>
                     <div className={style.Detalles}> 
                         <img className={style.DetailImage}src={detail.image} alt="imagen"/>
                         <div className={style.NameContainer}>
-                            <p className={style.DetailName}> {detail.Name} </p>
+                            <p className={style.DetailName}> {detail.name} </p>
                         </div>
                         <div className={style.ContainerDetail}>
                             <p className={style.DetailHp}> 
-                                <span className={style.DetailHpSpan}>HP {detail.Hp}</span>
+                                <span className={style.DetailHpSpan}>HP {detail.hp}</span>
                             </p>
                         </div>    
                         <div className={style.TypeWeightHeight}>
                             <p className={style.DetailTypes}> 
-                                {detail.Types?.map((v) => v.name).join(' / ')}
+                                {detail.types?.map((v) => v.name).join(' / ')}
                                 <span className={style.LettersTypeWeightHeight}>Type</span>
                             </p>
                             <p className={style.DetailWeight}>
-                                {detail.Weight}
+                                {detail.weight}
                                 <span className={style.LettersTypeWeightHeight}>Weight</span>    
                             </p>
                             <p className={style.DetailHeight}> 
-                                {detail.Height}
+                                {detail.height}
                                 <span className={style.LettersTypeWeightHeight}>Height</span>
                             </p>
                         </div>
                         <div className={style.AttackContainer}>
-                            <p className={style.DetailAttack}> Attack: {detail.Attack}</p>
+                            <p className={style.DetailAttack}> Attack: {detail.attack}</p>
                         </div>
                         <div className={style.DefenseContainer}>
-                            <p className={style.DetailDefense}> Defense: {detail.Defense}</p>
+                            <p className={style.DetailDefense}> Defense: {detail.defense}</p>
                         </div>
                         <div className={style.SpeedContainer}>
-                            <p className={style.DetailSpeed}> Speed: {detail.Speed}</p>
+                            <p className={style.DetailSpeed}> Speed: {detail.speed}</p>
                         </div>    
                         <div className={style.IdContainer}>
                             <p className={style.DetailId}> # {detail.id} </p>

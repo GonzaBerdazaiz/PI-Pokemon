@@ -7,9 +7,9 @@ const SearchBar = () => {
     const dispatch = useDispatch()
     const [ name, setName ] = useState("")
 
-    function handleInputChange(event){
+    function handleChange(event){
         event.preventDefault();
-        setName(event.target.value.replaceAll(/^\s+/g, "").replaceAll(/\s+/g, " "))
+        setName(event.target.value)
     }
 
     function handleSubmit(event){
@@ -28,7 +28,7 @@ const SearchBar = () => {
                 type="text"
                 placeholder="Search Pokemon..."
                 value={name}
-                onChange={(event) => handleInputChange(event)}
+                onChange={(event) => handleChange(event)}
               />
               <button type="submit" className={style.SearchButton}>Search</button>
             </div>

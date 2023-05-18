@@ -163,9 +163,9 @@ const Form = () =>{
                 </div>
                 <select onChange={typesHandler} multiple={5} className={style.typesHandler} >
                     {allTypes?.map((tipo)=>{
-                        return <option name="type" key={ tipo.id} value={ tipo.name}>
-                        { tipo.name} </option>
-                    })}
+                        return <option name="type" key={tipo.id} value={tipo.id}>
+                        {tipo.name} </option>
+                    })} 
                 </select>
                 <button type="submit" disabled={Object.keys(errors).length ? true : false}>CREAR</button>
                 <div className={style.ErrorValidation}>

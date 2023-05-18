@@ -31,10 +31,8 @@ const validations = (form, allPokemons)=>{
         errors.height = 'Pokemon height must be higher than 1 and less than 200'
     } else if(!/^[0-9]{1,3}$/.test(form.height)){
         errors.height = "Must be a number"
-    } else if(!form.types.length){
+    } else if(!form.types){
         errors.types = 'Must choose a pokemon type'
-    } else if(form.types.length > 2){
-        errors.types = `You can choose only 2 types per Pokemon`
     }
     
     return errors;

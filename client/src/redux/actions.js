@@ -23,8 +23,21 @@ export const getPokemonDetail = (id) =>{
 
 export const getPokemonByName = (name) =>{
     return async (dispatch) =>{
-        const resp = await axios.get(`${url}/pokemon?name=${name}`)
-        return dispatch({type: GET_POKEMON_BY_NAME, payload: resp.data})
+        try{
+            const json = await axios.get(`${url}/pokemon?name=${name}`)
+            // console.log(json.data)
+
+            return dispatch({
+                type:"GET_POKEMON_BY_NAME",
+                payload: json.data
+            })
+        } catch(error){
+            console.log(error)
+            return dispatch({
+                type:"GET_POKEMON_BY_NAME",
+                payload: ['Pokemon']
+            })
+        }
     }
 }
 
