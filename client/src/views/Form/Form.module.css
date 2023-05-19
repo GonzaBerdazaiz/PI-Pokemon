@@ -134,7 +134,7 @@ input[name="image"] {
     width: 50%;
 }
 
-button[type="submit"] {
+.FormButton {
     position: relative;
     left: -18%;
     top:65%;
@@ -152,7 +152,7 @@ button[type="submit"] {
     margin-top: 5px;
   }
   
-  button[type="submit"]:hover {
+.FormButton:hover {
     scale: 1.2;
     color: white;
     transition: 0.5s ease;

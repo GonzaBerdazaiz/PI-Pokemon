@@ -16,7 +16,9 @@ const NavBar = () => {
             </Link>
           </div>
         </div>
-        <SearchBar /> 
+        <div className={style.middleSection} >
+        <SearchBar></SearchBar>
+        </div>
         <div className={style.RightContainer}>
           <Link to="/contact" className={style.Contacto}>
             Contact

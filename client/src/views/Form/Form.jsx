@@ -170,7 +170,7 @@ const Form = () =>{
                         {tipo.name} </option>
                     })} 
                 </select>
-                <button type="submit" disabled={Object.keys(errors).length ? true : false}>CREAR</button>
+                <button type="submit" className={style.FormButton} disabled={Object.keys(errors).length ? true : false}>CREAR</button>
                 <div className={style.ErrorValidation}>
                     {errors.name && <p>{errors.name}</p>}
                     {errors.hp && <p>{errors.hp}</p>}

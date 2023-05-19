@@ -19,13 +19,13 @@ const Home = () => { //Al montar el componente HOME, debemos ejecutar las action
     },[dispatch])   
     //SECUENCIA: Se monta HOME y eso dispara el useEffect el cual hace el dispatch. eso hace que se ejecute la action creator getAllPokemons la cual retorna la funcion. El thunk middleware agarra la fc la ejecuta, hace el dispatch y la info va al reducer y crea un estado nuevo q es igual al anterior pero con el cambio que le pasamos
 
-    const handlePaginate = (pageNumber) => {
+    const handlePaginate = (pageNumber) => {    //recibe el num de pag y actualiza el estado y lo pasamos como prop al Pagination
         setCurrentPage(pageNumber);
     };
 
-    const indexOfLastPokemon = currentPage * pokemonsPerPage;
+    const indexOfLastPokemon = currentPage * pokemonsPerPage; //calculamos el primer y ultimo indice de la pagina para ver cuales son los pokemones de la pag actual
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
-    const currentPokemons = allPokemons.slice(
+    const currentPokemons = allPokemons.slice(  //con slice obtenemos una porcion de allPokemons, los q corresponden a la pag actual
         indexOfFirstPokemon,
         indexOfLastPokemon
     );
@@ -33,7 +33,7 @@ const Home = () => { //Al montar el componente HOME, debemos ejecutar las action
     const changeLoading = () => {   //si la demora en cargar el home es mayor a lo especificado, metemos el loading
         setTimeout(() => {
           setLoading(false);
-        }, 3000);
+        }, 6000);
     };
     
     if (loading) {

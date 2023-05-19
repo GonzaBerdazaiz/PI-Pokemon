@@ -1,11 +1,32 @@
-.searchBox {
+.SearchBar form {
     display: flex;
-    align-items: center;  
+    align-items: center;
 }
 
-.SearchInput {
+.SearchBar input.SearchInput {
+    margin-right: 15px; /* Margen derecho para separarlo del botón */
+    flex: 1; /* Ocupa el espacio restante */
     outline: none;
     border: none;
     border-bottom: 2px solid silver;
-    width:200%;
-}
+  }
+
+  .SearchBarButton {
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    background-color: white;
+    font-size: 14px;
+    padding: 10px 10px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .SearchBarButton:hover {
+    scale: 1.2;
+    background-color: rgba(246,165,86,255);
+    color: white;
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
