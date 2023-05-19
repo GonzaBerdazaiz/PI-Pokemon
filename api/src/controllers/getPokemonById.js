@@ -22,16 +22,16 @@ const getPokemonByIdApi = async(id) => {
     let p = pokeApi;
     return {
       id: p.data.id,
-      Name: p.data.name,
+      name: p.data.name,
       image: p.data.sprites.other.dream_world.front_default,
-      Hp: p.data.stats[0].base_stat,
-      Attack: p.data.stats[1].base_stat,
-      Defense: p.data.stats[2].base_stat,
-      Speed: p.data.stats[3].base_stat,
-      Height: p.data.height,
-      Weight: p.data.weight,
-      Types: p.data.types.map((t) => { return {name: t.type.name}}),
-      Created: false,
+      hp: p.data.stats[0].base_stat,
+      attack: p.data.stats[1].base_stat,
+      defense: p.data.stats[2].base_stat,
+      speed: p.data.stats[3].base_stat,
+      height: p.data.height,
+      weight: p.data.weight,
+      types: p.data.types.map((t) => { return {name: t.type.name}}),
+      created: false,
     }; 
   }
 }

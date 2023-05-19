@@ -26,16 +26,16 @@ const getPokemonsByNameApi = async(name) =>{
         if (filteredByNamePokemons.data) {
             response.push({
                 id: filteredByNamePokemons.data.id,
-                Name: filteredByNamePokemons.data.name,
+                name: filteredByNamePokemons.data.name,
                 image: filteredByNamePokemons.data.sprites.other.dream_world.front_default,
-                Hp: filteredByNamePokemons.data.stats[0].base_stat,
-                Attack: filteredByNamePokemons.data.stats[1].base_stat,
-                Defense: filteredByNamePokemons.data.stats[2].base_stat,
-                Speed: filteredByNamePokemons.data.stats[3].base_stat,
-                Height: filteredByNamePokemons.data.height,
-                Weight: filteredByNamePokemons.data.weight,
-                Types: filteredByNamePokemons.data.types.map((t) => { return {name: t.type.name}}),
-                Created: false,
+                hp: filteredByNamePokemons.data.stats[0].base_stat,
+                attack: filteredByNamePokemons.data.stats[1].base_stat,
+                defense: filteredByNamePokemons.data.stats[2].base_stat,
+                speed: filteredByNamePokemons.data.stats[3].base_stat,
+                height: filteredByNamePokemons.data.height,
+                weight: filteredByNamePokemons.data.weight,
+                types: filteredByNamePokemons.data.types.map((t) => { return {name: t.type.name}}),
+                created: false,
         })};
         return response;
     } catch (error){
