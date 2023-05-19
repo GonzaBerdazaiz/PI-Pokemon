@@ -4,12 +4,14 @@ import validations from "./Validaciones";
 import {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {getAllTypes} from "../../redux/actions";
+import { useNavigate } from "react-router-dom";
 
 const Form = () =>{
 
     const allTypes = useSelector(state => state.allTypes)
     const allPokemons = useSelector(state=>state.allPokemons.map((pok) => pok.name)) //traemos todos los pokemon para validar que no exista el nombre
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [form, setForm] = useState({ //Estado inicial de mi form
         name:"",
@@ -50,6 +52,7 @@ const Form = () =>{
         axios.post("http://localhost:3001/pokemon", form)
         .then(res=>alert("Pokemon creado correctamente"))
         .catch(err=>alert(err))
+        navigate("/home"); //con esto nos dirigimos a home cuando se termine el formulario
       };
 
     const typesHandler = (event) =>{

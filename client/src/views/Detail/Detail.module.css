@@ -102,25 +102,49 @@
     color:dimgrey;
     height: 10%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 }
+/* .AttackIcon{
+    width: 20px; 
+    display: flex;
+    height: auto; 
+    margin-right: 5px;
+    top: 57.5%;
+    justify-content: center;
+} */
 
 .DefenseContainer{
     color:dimgrey;
     height: 10%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 }
+/* .DefenseIcon{
+    width: 20px; 
+    display: flex;
+    height: auto; 
+    margin-right: 5px;
+    top: 67.5%;
+    justify-content: center;
+} */
 
 .SpeedContainer{
     color:dimgrey;
     height: 10%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 }
+/* .SpeedIcon {
+    width: 20px; 
+    display: flex;
+    height: auto; 
+    margin-right: 5px; 
+    top: 78.5%;
+    justify-content: center;
+} */
 
 .IdContainer {
     color:dimgrey;

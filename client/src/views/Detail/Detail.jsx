@@ -24,7 +24,7 @@ const Detail =() =>{
             ):(
                 <div>
                     <div className={style.Detalles}> 
-                        <img className={style.DetailImage}src={detail.image} alt="imagen"/>
+                        <img className={style.DetailImage}src={detail.image ? detail.image : "https://assets.pokemon.com/assets/cms2/img/pokedex/full/201.png"} alt="imagen"/>
                         <div className={style.NameContainer}>
                             <p className={style.DetailName}> {detail.name} </p>
                         </div>
@@ -48,12 +48,15 @@ const Detail =() =>{
                             </p>
                         </div>
                         <div className={style.AttackContainer}>
+                            {/* <img src="https://www.pngitem.com/pimgs/m/178-1789882_sword-fighting-attack-icon-png-transparent-png.png" alt="png" className={style.AttackIcon}></img> */}
                             <p className={style.DetailAttack}> Attack: {detail.attack}</p>
                         </div>
                         <div className={style.DefenseContainer}>
+                            {/* <img src="https://png.pngtree.com/png-clipart/20200311/ourmid/pngtree-shield-gray-and-white-png-image_2133647.jpg" alt="png" className={style.DefenseIcon}></img> */}
                             <p className={style.DetailDefense}> Defense: {detail.defense}</p>
                         </div>
                         <div className={style.SpeedContainer}>
+                            {/* <img src="https://cdn.onlinewebfonts.com/svg/img_81086.png" alt="png" className={style.SpeedIcon}></img> */}
                             <p className={style.DetailSpeed}> Speed: {detail.speed}</p>
                         </div>    
                         <div className={style.IdContainer}>
