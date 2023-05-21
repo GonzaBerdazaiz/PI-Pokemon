@@ -4,6 +4,7 @@ export const GET_POKEMON_DETAIL = "GET_POKEMON_DETAIL";
 export const GET_POKEMON_BY_NAME = "GET_POKEMON_BY_NAME";
 export const GET_ALL_TYPES = "GET_ALL_TYPES";
 export const CLEAR_DETAIL = "CLEAR_DETAIL";
+export const FILTER_BY_SOURCE = "FILTER_BY_SOURCE";
 
 const url = "http://localhost:3001";
 
@@ -24,19 +25,10 @@ export const getPokemonDetail = (id) =>{
 export const getPokemonByName = (name) =>{
     return async (dispatch) =>{
         try{
-            const json = await axios.get(`${url}/pokemon?name=${name}`)
-            // console.log(json.data)
-
-            return dispatch({
-                type:"GET_POKEMON_BY_NAME",
-                payload: json.data
-            })
-        } catch(error){
-            console.log(error)
-            return dispatch({
-                type:"GET_POKEMON_BY_NAME",
-                payload: ['Pokemon']
-            })
+            const {data} = await axios.get(`${url}/pokemon?name=${name}`)
+            return dispatch({ type: GET_POKEMON_BY_NAME, payload: data })
+        } catch (error){
+            console.log(error.message)
         }
     }
 }
@@ -57,4 +49,8 @@ export const createPokemon = (payload) =>{
 
 export const clearDetail = () => {
     return { type: CLEAR_DETAIL };
+  };
+
+  export const filterBySource = (payload) => {
+    return { type: FILTER_BY_SOURCE, payload };
   };

@@ -1,31 +1,35 @@
-// import { useDispatch } from "react-redux";
-// import { useState } from 'react';
-// import { getPokemonByName } from "../../redux/actions";
+import { useDispatch } from "react-redux";
+import { useState } from 'react';
+import { getPokemonByName} from "../../redux/actions";
 import style from "./SearchBar.module.css"
 
 const SearchBar = () => {
-//   const dispatch = useDispatch()
-//   const [ name, setName ] = useState("")
+  const dispatch = useDispatch()
+  const [ nameSearch, setNameSearch ] = useState("")
 
-//   function handleChange(event){
-//     event.preventDefault();
-//     setName(event.target.value)
-//   }
+  const handleChange = (event) =>{
+    event.preventDefault();
+    setNameSearch(event.target.value)
+  }
 
-//   function handleSubmit(event){
-//     event.preventDefault();
-//     dispatch(getPokemonByName(name))
-//     setName("")
-//   }
+  const handleSubmit = (event) =>{
+    event.preventDefault();
+    if (nameSearch.length > 0) {
+      dispatch(getPokemonByName(nameSearch.toLocaleLowerCase()));
+      setNameSearch('');
+    }
+  }
 
   return (
     <div className={style.SearchBar}>
-      <form >
+      <form onSubmit={handleSubmit}>
         <div className={style.DivInput}>
           <input
             className={style.SearchInput}
-            type="text"
-            placeholder="Search Pokemon..."
+            type="search"
+            placeholder="Search a Pokemon..."
+            value={nameSearch}
+            onChange={handleChange}
           />
         </div>
         <div className={style.DivButton}>
@@ -34,22 +38,6 @@ const SearchBar = () => {
       </form> 
     </div>
   )
-//   return (
-//     <div className={style.SearchBar}>
-//       <form `onSubmit={handleSubmit}>`
-//         <div className={style.searchBox}>
-//           <input
-//             className={style.SearchInput}
-//             type="text"
-//             placeholder="Search Pokemon..."
-//             value={name}
-//             onChange={handleChange}
-//           />
-//           <button type="submit" className={style.SearchButton}>Search</button>
-//         </div>
-//       </form>
-//     </div>
-//   );
 }
 
 export default SearchBar;

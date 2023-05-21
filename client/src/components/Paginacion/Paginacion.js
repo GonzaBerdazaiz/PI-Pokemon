@@ -7,35 +7,50 @@ const Pagination = ({
     currentPage,
     handlePaginate,
   }) => {
-    const pageNumbers = Math.ceil(totalPokemons / pokemonsPerPage);
+    
+  const pageNumbers = Math.ceil(totalPokemons / pokemonsPerPage);
 
-  const renderPageNumbers = () => {    //genera los elementos de lista (li) que representan los num de pag en el paginado
-    const pages = [];
+  const renderPageNumbers = () => {
+    const buttons = [];
+    const start = Math.max(currentPage - 1, 1);
+    const end = Math.min(currentPage + 1, pageNumbers);
 
-    for (let i = 1; i <= pageNumbers; i++) {    //se itera hasta pageNumbers que tiene el num total de paginas
-      pages.push(
+    for (let i = start; i <= end; i++) {
+      buttons.push(
         <li
-          key={i}   //cuando iteramos, primero generamos los num de las paginas
+          key={i}
           className={`${style.paginationItem} ${currentPage === i ? style.active : ''}`}
-          onClick={() => handlePaginate(i)} //fn q ejecuta cuando hacemos click en la casilla y ejecuta handlePaginate con el i correspondiente lo que activa la logica pa mostrar los pokemon de esa pag
+          onClick={() => handlePaginate(i)}
         >
           {i}
         </li>
       );
     }
 
-    return pages;
+    return buttons;
   };
 
-  const handlePrevious = () => {    //fn q se activa cuando apretamos PREV para verificar si la pag es mayor a 1, si lo es ejecuta handlePaginate
+  const handlePrevious = () => {
     if (currentPage > 1) {
       handlePaginate(currentPage - 1);
     }
   };
 
-  const handleNext = () => {    //ambas funciones permiten navegar hacia adelante y hacia atras en el paginado 
+  const handleNext = () => {
     if (currentPage < pageNumbers) {
       handlePaginate(currentPage + 1);
+    }
+  };
+
+  const handleFirstPage = () => {
+    if (currentPage !== 1) {
+      handlePaginate(1);
+    }
+  };
+
+  const handleLastPage = () => {
+    if (currentPage !== pageNumbers) {
+      handlePaginate(pageNumbers);
     }
   };
 
@@ -43,7 +58,13 @@ const Pagination = ({
     <div className={style.PaginationContainer}>
       <ul className={style.PaginationList}>
         <li
-          className={`${style.paginationItem} ${currentPage === 1 ? style.disabled : ''}`} //para aplicar el estilo dependiendo si es active o no
+          className={`${style.paginationItemFirst} ${currentPage === 1 ? style.disabled : ''}`} 
+          onClick={handleFirstPage}
+        >
+          First
+        </li>
+        <li
+          className={`${style.paginationItem} ${currentPage === 1 ? style.disabled : ''}`} 
           onClick={handlePrevious}
         >
           Prev
@@ -54,6 +75,12 @@ const Pagination = ({
           onClick={handleNext}
         >
           Next
+        </li>
+        <li
+          className={`${style.paginationItem} ${currentPage === pageNumbers ? style.disabled : ''}`}
+          onClick={handleLastPage}
+        >
+          Last
         </li>
       </ul>
     </div>

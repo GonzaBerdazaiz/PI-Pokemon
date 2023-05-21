@@ -9,7 +9,8 @@ import { useNavigate } from "react-router-dom";
 const Form = () =>{
 
     const allTypes = useSelector(state => state.allTypes)
-    const allPokemons = useSelector(state=>state.allPokemons.map((pok) => pok.name)) //traemos todos los pokemon para validar que no exista el nombre
+    //const allPokemons = useSelector(state=>state.allPokemons?.map((pok) => pok.name)) //traemos todos los pokemon para validar que no exista el nombre
+    const allPokemons = useSelector(state=>state.allPokemons?.map((pok) => pok.name)) //traemos todos los pokemon para validar que no exista el nombre
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
