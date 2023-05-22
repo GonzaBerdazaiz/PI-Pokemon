@@ -2,22 +2,22 @@
     position: relative;
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    width: 50%;
     height: 5%; 
+    margin-right: 3%;
 }
 
 .PaginationList{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 22%;
+    width: 50%;
     list-style: none;   /* con esto sacamos los circulos negros que pertenecen a los elementos li */
 }
 
 li{
-    width: 13%;
-    border-top: 3px solid silver;
-    border-bottom: 3px solid silver;
+    width: 11%;
+    border: 3px solid silver;
     /* border-top: 3px solid rgba(242,211,32,255);
     border-bottom: 3px solid rgba(242,211,32,255); */
     background-color: white;

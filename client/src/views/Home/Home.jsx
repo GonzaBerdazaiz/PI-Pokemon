@@ -6,6 +6,8 @@ import Pagination from "../../components/Paginacion/Paginacion"
 //import Loading from "../../components/Loading/Loading";
 import { getAllPokemons } from "../../redux/actions";
 import NavBar from "../../components/NavBar/NavBar";
+import Order from "../../components/Order/Order";
+import Filter from "../../components/Filter/Filter";
 
 const Home = ({pokemons}) => {
 
@@ -43,18 +45,20 @@ const Home = ({pokemons}) => {
     
         return (
             <div className={style.HomeBackground}>
-                <NavBar />
-                <div className={style.filterContainer}>
-                </div>
+                <NavBar/>
                 <div>
-                    <Pagination
-                        pokemonsPerPage={pokemonsPerPage}
-                        totalPokemons={allPokemons.length}
-                        currentPage={currentPage}
-                        handlePaginate={handlePaginate}
-                    />
-                </div>
-                <Cards pokemons={currentPokemons} />  
+                    <div className={style.PaginationOrdenContainer}>
+                        <Filter setCurrentPage={setCurrentPage}></Filter>
+                        <Pagination
+                            pokemonsPerPage={pokemonsPerPage}
+                            totalPokemons={allPokemons.length}
+                            currentPage={currentPage}
+                            handlePaginate={handlePaginate}
+                        />
+                        <Order setCurrentPage={setCurrentPage}></Order>
+                    </div>
+                    <Cards pokemons={currentPokemons} />
+                </div> 
             </div>
         );
     //};

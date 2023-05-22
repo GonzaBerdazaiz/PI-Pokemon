@@ -18,13 +18,13 @@ const NavBar = () => {
         </div>
       </div>
       <div className={style.middleSection} >
-      <SearchBar />
+        <SearchBar/>
       </div>
-      <div className={style.RightContainer}>
+      {/* <div className={style.RightContainer}>
         <Link to="/contact" className={style.Contacto}>
           Contact
         </Link>
-      </div>
+      </div> */}
     </nav>
   );
 };

@@ -6,8 +6,6 @@ const validations = (form, allPokemons)=>{
 
     if(!form.name || !nameRegex.test(form.name)){
         errors.name = "Name is required and numbers or special characters are not allowed"
-    // } else if(allPokemons.indexOf(form.name) !== -1){
-    //     errors.name = "That pokemon already exist"
     } else if(form.hp < 1 || form.hp > 255){
         errors.hp = "Pokemon life must be higher than 1 and less than 255"
     } else if(!numberRegex.test(form.hp)){

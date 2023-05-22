@@ -5,11 +5,18 @@ body, html {
 }
 
 .HomeBackground{
+  padding-top: 80px; 
   background-image: url(../assets.img/fondo-pasto.jpg);
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100%;
-  padding-top: 80px;
+  background-attachment: fixed;
+  height: calc(100vh - 80px);
 } 
+
+.PaginationOrdenContainer {
+  display: flex;
+  width: 98%;
+  margin-left: 1%;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 0.5%;
+}

@@ -58,7 +58,6 @@ img[id="bola4"]{
     position: absolute;
     top: 14.5%;
     left: 48%;
-    /* left: 38%; */
     background-image: url("../assets.img/pokedex.jpg");
     background-size: cover;
     box-shadow: 4px 4px 1px 1px rgba(140,104,104,1);
