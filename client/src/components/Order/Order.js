@@ -1,16 +1,14 @@
 import { useDispatch } from "react-redux";
-import { useState } from "react";
 import {orderPokemon} from "../../redux/actions"
 import style from "./Order.module.css"
 
-const Order = () => {
+const Order = ({ setCurrentPage }) => {
 
     const dispatch = useDispatch();
-    const [aux, setAux] = useState(false);
 
     const orderPokemonName = (event) => {
         dispatch(orderPokemon(event.target.value));
-        setAux(true);
+        setCurrentPage(1)
     };
 
     return (

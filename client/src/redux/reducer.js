@@ -29,29 +29,16 @@ const reducer = (state = initialState, action) =>{
         case GET_ALL_TYPES:
             return { ...state, allTypes: action.payload};
         case FILTER_POKEMON: 
-            const allPokemons = [...state.allPokemons];
-            let filters = action.payload  === 'all'
-                ? allPokemons
-                : allPokemons.filter((poke) => {
-                    const extractTypes = poke.types?.map(type => type.name);
-                    return extractTypes?.includes(action.payload);
-                });
-            return {...state, pokemons: filters}
-                // case "created":
-                //     filter = allPokemons.filter((a) => !isNaN(a.id))
-                // break;
-                // case "original":
-                //     filter = allPokemons.filter((a) => isNaN(a.id))
-                // break;
-                // default:
-                //     filter = allPokemons;
-            // return {...state, pokemons: action.payload === "all" ? allPokemons : filter};
-            // const filter =
-            //     action.payload === "created"
-            //     ? filteredPokemons.filter((v) => v.created)
-            //     : filteredPokemons.filter((v) => !v.created);
-            // return {
-            //     ...state, pokemons: action.payload === "all" ? state.filteredPokemons : filter};
+            const filterByDb = state.allPokemons;
+            const filteredPokemon = action.payload === "original"
+                ? filterByDb.filter((element) => !element.created)
+                : filterByDb.filter((element) => element.created); // Se filtran las que NO fueron creadas en la BDD
+            return {
+                ...state,
+                pokemons: action.payload === "all" ? state.allPokemons : filteredPokemon,
+            }
+            
+            
         case ORDER_POKEMON:
             const orderPokemons = [...state.allPokemons];
             let order;

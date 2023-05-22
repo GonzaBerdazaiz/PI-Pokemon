@@ -48,7 +48,7 @@ const Home = ({pokemons}) => {
                 <NavBar/>
                 <div>
                     <div className={style.PaginationOrdenContainer}>
-                        <Filter setCurrentPage={setCurrentPage}></Filter>
+                        <Filter currentPage={currentPage} setCurrentPage={setCurrentPage}></Filter>
                         <Pagination
                             pokemonsPerPage={pokemonsPerPage}
                             totalPokemons={allPokemons.length}

@@ -1,16 +1,14 @@
 import { useDispatch } from "react-redux";
 import {filterPokemon} from "../../redux/actions";
-import { useState } from "react";
 import style from "./Filter.module.css"
 
-const Filter = () => {
+const Filter = ({ setCurrentPage }) => {
 
     const dispatch = useDispatch();
-    const [aux, setAux] = useState(false);
 
     const handlerFilterPokemon = (event) => {
         dispatch(filterPokemon(event.target.value));
-        setAux(true);
+        setCurrentPage(1)
     };
 
     return(
@@ -21,7 +19,7 @@ const Filter = () => {
                 <optgroup key={1} label="Source" font-weight="bold" disabled selected />  
                 <option key={2} value="original">Original</option>
                 <option key={3} value="created">Created</option>
-                <optgroup key={4} label="Type" font-weight="bold" disabled selected />
+                {/* <optgroup key={4} label="Type" font-weight="bold" disabled selected />
                 <option key={5} value="all">All Types</option>  
                 <option key={6} value="normal">Normal</option>  
                 <option key={7} value="fighting">Fighting</option>  
@@ -42,7 +40,7 @@ const Filter = () => {
                 <option key={22} value="dark">Dark</option>  
                 <option key={23} value="fairy">Fairy</option>  
                 <option key={24} value="unknown">Unknown</option>  
-                <option key={25} value="shadow">Shadow</option>  
+                <option key={25} value="shadow">Shadow</option>   */}
             </select>
         </div>
     )
