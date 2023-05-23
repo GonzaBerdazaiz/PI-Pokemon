@@ -20,7 +20,8 @@ const getPokemonApi = async()=>{
         weight: pokemonResponse.data.weight,
         types: pokemonResponse.data.types.map((type) => ({
             name: type.type.name
-        }))
+        })),
+        created: false,
     }));
     return pokemonList;
 }

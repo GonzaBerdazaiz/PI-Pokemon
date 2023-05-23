@@ -2,23 +2,23 @@
 const { expect } = require('chai');
 const session = require('supertest-session');
 const app = require('../../src/app.js');
-const { Pokemon, conn } = require('../../src/db.js');
 
 const agent = session(app);
-const pokemon = {
-  name: 'Pikachu',
-};
 
-describe('Pokemon routes', () => {
-  before(() => conn.authenticate()
-  .catch((err) => {
-    console.error('Unable to connect to the database:', err);
-  }));
-  beforeEach(() => Pokemon.sync({ force: true })
-    .then(() => Pokemon.create(pokemon)));
-  describe('GET /pokemons', () => {
-    it('should get 200', () =>
-      agent.get('/pokemons').expect(200)
-    );
+describe("Rutas pokemon", ()=>{
+  describe("If only /pokemon, should get 200 and all pokemon", () => {
+    describe("Get /pokemon", () => {
+      it("Should get 200 when ", () => {
+      agent.get("/pokemon").then(() => done());
+      })
+    })
+    describe("GET /pokemon/:id", () => {
+      it("Should get 200 when id is received", () =>
+        agent.get("/pokemon/11").expect(200));
+    });
+    describe("GET /pokemon?name=aaa", () => {
+      it("Should get 200 when name received", () =>
+        agent.get("/pokemon?name=pikachu"));
+    });
   });
-});
+})

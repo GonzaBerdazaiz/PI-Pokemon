@@ -51,25 +51,3 @@ const pokemonDeletedHandler = async(req,res) =>{
 
 
 module.exports = {allPokemonsHandler, pokemonByIdHandler, pokemonCreatedHandler, pokemonDeletedHandler};
-
-
-// const allPokemonsHandler = async(req,res) =>{
-//     try{
-//         const getPokemons = await getAllPokemons();
-//         res.status(200).json(getPokemons);
-//     } catch(error){
-//         res.status(404).json({error: error.message});
-//     }
-// }
-
-// const pokemonByNameHandler = async(req,res)=>{
-//     const { name } = req.query;
-//     try{
-//         const pokemonName = await getPokemonsByName(name);
-//         res.status(200).json(pokemonName);
-//     }catch(error){
-//         res.status(400).json({error: error.message});
-//     }
-// }
-
-//module.exports = {allPokemonsHandler, pokemonByIdHandler, pokemonByNameHandler, pokemonCreatedHandler};
