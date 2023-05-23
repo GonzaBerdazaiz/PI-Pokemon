@@ -2,7 +2,6 @@ const getAllPokemons = require("../controllers/getAllPokemons");
 const getPokemonById = require("../controllers/getPokemonById");
 const getPokemonsByName = require("../controllers/getPokemonsByName");
 const pokemonCreated = require("../controllers/pokemonCreated");
-const pokemonDeleted = require("../controllers/deletePokemon");
 
 const allPokemonsHandler = async(req,res)=>{
     const { name } = req.query;
@@ -39,15 +38,5 @@ const pokemonByIdHandler = async(req,res) => {
     }
 }
 
-const pokemonDeletedHandler = async(req,res) =>{
-    const {id} = req.params;
-    try{
-        const deletePokemon = await pokemonDeleted(id);
-        res.status(200).json(deletePokemon)
-    } catch (error) {
-        res.status(400).json({error: error.message});
-    }
-}
 
-
-module.exports = {allPokemonsHandler, pokemonByIdHandler, pokemonCreatedHandler, pokemonDeletedHandler};
+module.exports = {allPokemonsHandler, pokemonByIdHandler, pokemonCreatedHandler};
