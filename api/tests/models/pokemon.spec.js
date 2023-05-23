@@ -2,7 +2,7 @@ const { Pokemon, conn } = require('../../src/db.js');
 const { expect } = require('chai');
 
 describe('Pokemon model', () => {
-  before(() => conn.authenticate()
+  before(() => conn.authenticate()    
     .catch((err) => {
       console.error('Unable to connect to the database:', err);
     }));
@@ -25,49 +25,33 @@ describe('Pokemon model', () => {
     });
   });
 
-describe("Stats", () => { //aca definimos el grupo que vamos a testear y recibimos una cb donde definimos q vamos a testear: IT
   beforeEach(() => Pokemon.sync({ force: true }));
-  describe('hp', () => {
+  describe("Stats", () => {
     it("Should throw an error if Hp is not a number", (done) => {
       Pokemon.create({ hp: "aa" }) //en esta cb definimos
         .then(() => done(new Error("Hp should be a number")))
         .catch(() => done());
-    });
-  })
-  beforeEach(() => Pokemon.sync({ force: true }));
-  describe('attack', () => {  
+    });  
     it("Should throw an error if attack is not a number", (done) => {
       Pokemon.create({ attack: "aa" })
         .then(() => done(new Error("Attack should be a number")))
         .catch(() => done());
     });
-  })
-  beforeEach(() => Pokemon.sync({ force: true }));
-  describe('defense', () => {
     it("Should throw an error if defense is not a number", (done) => {
       Pokemon.create({ defense: "aa" })
         .then(() => done(new Error("Defense should be a number")))
         .catch(() => done());
     });
-  })
-  beforeEach(() => Pokemon.sync({ force: true }));
-  describe('speed', () => {  
     it("Should throw an error if speed is not a number", (done) => {
       Pokemon.create({ speed: "aa" })
         .then(() => done(new Error("Speed should be a number")))
         .catch(() => done());
     });
-  })
-  beforeEach(() => Pokemon.sync({ force: true }));
-  describe('height', () => {
     it("Should throw an error if height is not a number", (done) => {
       Pokemon.create({ height: "aa" })
         .then(() => done(new Error("Height should be a number")))
         .catch(() => done());
     });
-  })
-  beforeEach(() => Pokemon.sync({ force: true }));
-  describe('weight', () => {
     it("Should throw an error if weight is not a number", (done) => {
       Pokemon.create({ weight: "aa" })
         .then(() => done(new Error("Weight should be a number")))
@@ -75,4 +59,3 @@ describe("Stats", () => { //aca definimos el grupo que vamos a testear y recibim
     });
   });
 })
-});

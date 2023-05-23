@@ -5,20 +5,20 @@ const app = require('../../src/app.js');
 
 const agent = session(app);
 
-describe("Rutas pokemon", ()=>{
+describe("Pokemon routes", ()=>{
   describe("If only /pokemon, should get 200 and all pokemon", () => {
-    describe("Get /pokemon", () => {
-      it("Should get 200 when ", () => {
-      agent.get("/pokemon").then(() => done());
-      })
-    })
     describe("GET /pokemon/:id", () => {
       it("Should get 200 when id is received", () =>
         agent.get("/pokemon/11").expect(200));
     });
     describe("GET /pokemon?name=aaa", () => {
       it("Should get 200 when name received", () =>
-        agent.get("/pokemon?name=pikachu"));
+        agent.get("/pokemon?name=pikachu").expect(200));
     });
+    describe("Get /pokemon", () => {
+      it("Should get 200 when ", () => {
+      agent.get("/pokemon").expect(200);
+      })
+    })
   });
 })
