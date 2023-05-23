@@ -3,7 +3,8 @@ import {GET_ALL_POKEMONS,
     GET_POKEMON_DETAIL, 
     GET_ALL_TYPES, 
     CLEAR_DETAIL, 
-    FILTER_POKEMON, 
+    FILTER_TYPE, 
+    FILTER_BY_SOURCE,
     ORDER_POKEMON} from "./actions";
 
 const initialState = {
@@ -21,23 +22,33 @@ const reducer = (state = initialState, action) =>{
                 ...state, allPokemons: action.payload, pokemons: action.payload};
         case GET_POKEMON_BY_NAME:
             return { 
-                ...state, pokemons: action.payload};
+                ...state, pokemons: [action.payload] };
         case GET_POKEMON_DETAIL:
             return { ...state, detail: action.payload};
         case CLEAR_DETAIL:
             return { ...state, detail: {} };
         case GET_ALL_TYPES:
             return { ...state, allTypes: action.payload};
-        case FILTER_POKEMON: 
-            const filterByDb = state.allPokemons;
-            const filteredPokemon = action.payload === "original"
-                ? filterByDb.filter((element) => !element.created)
-                : filterByDb.filter((element) => element.created); // Se filtran las que NO fueron creadas en la BDD
+        case FILTER_TYPE: 
+            let allPokemonsType = [...state.allPokemons];
+            let typeFiltered = 
+            action.payload  === 'all'
+                ? allPokemonsType
+                : allPokemonsType.filter((poke) => {
+                return poke.types.some((type) => type.name === action.payload);
+                });
+            return {...state, pokemons: typeFiltered}
+
+        case FILTER_BY_SOURCE:
+            const allPokemons = [...state.allPokemons];
+            const filter =
+            action.payload === "created"
+                ? allPokemons.filter((p) => p.created)
+                : allPokemons.filter((p) => !p.created);
             return {
                 ...state,
-                pokemons: action.payload === "all" ? state.allPokemons : filteredPokemon,
-            }
-            
+                pokemons: action.payload === "all" ? allPokemons : filter,
+            };
             
         case ORDER_POKEMON:
             const orderPokemons = [...state.allPokemons];

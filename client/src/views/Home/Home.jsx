@@ -1,6 +1,6 @@
 import Cards from "../../components/Cards/Cards";
 import { useState, useEffect } from 'react';
-import { connect, useDispatch, useSelector } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import style from "./Home.module.css";
 import Pagination from "../../components/Paginacion/Paginacion"
 //import Loading from "../../components/Loading/Loading";
@@ -12,7 +12,6 @@ import Filter from "../../components/Filter/Filter";
 const Home = ({pokemons}) => {
 
     const dispatch = useDispatch();
-    const allPokemons = useSelector((state) => state.allPokemons);
     const [currentPage, setCurrentPage] = useState(1);  //los creamos para controlar la pagina actual del paginado
     const pokemonsPerPage = 12;
     //const [loading, setLoading] = useState(true);   
@@ -23,7 +22,7 @@ const Home = ({pokemons}) => {
 
     const indexOfLastPokemon = currentPage * pokemonsPerPage; //calculamos el primer y ultimo indice de la pagina para ver cuales son los pokemones de la pag actual
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
-    const currentPokemons = allPokemons.length > 0 && allPokemons.slice(  //con slice obtenemos una porcion de allPokemons, los q corresponden a la pag actual
+    const currentPokemons = pokemons.length > 0 && pokemons.slice(  //con slice obtenemos una porcion de allPokemons, los q corresponden a la pag actual
         indexOfFirstPokemon,
         indexOfLastPokemon
     );
@@ -48,10 +47,10 @@ const Home = ({pokemons}) => {
                 <NavBar/>
                 <div>
                     <div className={style.PaginationOrdenContainer}>
-                        <Filter currentPage={currentPage} setCurrentPage={setCurrentPage}></Filter>
+                        <Filter setCurrentPage={setCurrentPage}></Filter>
                         <Pagination
                             pokemonsPerPage={pokemonsPerPage}
-                            totalPokemons={allPokemons.length}
+                            totalPokemons={pokemons.length}
                             currentPage={currentPage}
                             handlePaginate={handlePaginate}
                         />
@@ -64,10 +63,11 @@ const Home = ({pokemons}) => {
     //};
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => {    //Esto es para hacer el componente global xq sino se actualiza pero no cambia de estado. recibe el estad global como argumento y recibimos lo q queremos pasar al componente
     return {
-        pokemons: state.pokemons
+        pokemons: state.pokemons,
+        
     }
 }
 
-export default connect(mapStateToProps, null)(Home);
+export default connect(mapStateToProps, null)(Home); // el conect es para conectar el estado global con el componente

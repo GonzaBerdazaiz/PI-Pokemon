@@ -4,8 +4,9 @@ export const GET_POKEMON_DETAIL = "GET_POKEMON_DETAIL";
 export const GET_POKEMON_BY_NAME = "GET_POKEMON_BY_NAME";
 export const GET_ALL_TYPES = "GET_ALL_TYPES";
 export const CLEAR_DETAIL = "CLEAR_DETAIL";
-export const FILTER_POKEMON = "FILTER_POKEMON";
-export const ORDER_POKEMON = "ORDER_POKEMON"
+export const FILTER_TYPE = "FILTER_TYPE";
+export const ORDER_POKEMON = "ORDER_POKEMON";
+export const FILTER_BY_SOURCE = "FILTER_BY_SOURCE"
 
 const url = "http://localhost:3001";
 
@@ -18,8 +19,8 @@ export const getAllPokemons = () => {
 
 export const getPokemonDetail = (id) =>{
     return async (dispatch) =>{
-        const resp = await axios.get(`${url}/pokemon/${id}`);
-        return dispatch({type: GET_POKEMON_DETAIL, payload: resp.data})
+        const {data} = await axios.get(`${url}/pokemon/${id}`);
+        return dispatch({type: GET_POKEMON_DETAIL, payload: data})
     }
 }
 
@@ -52,9 +53,13 @@ export const clearDetail = () => {
     return { type: CLEAR_DETAIL };
 };
 
-export const filterPokemon = (payload) => {
-    return { type: FILTER_POKEMON, payload };
+export const filterPokemon = (type) => {
+    return { type: FILTER_TYPE, payload: type };
 };
+
+export const filterBySource = (payload) => {
+    return { type: FILTER_BY_SOURCE, payload };
+  };
 
 export const orderPokemon = (order) => {
     return { type: ORDER_POKEMON, payload: order };

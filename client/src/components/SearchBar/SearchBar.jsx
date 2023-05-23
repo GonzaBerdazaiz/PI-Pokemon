@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useState } from 'react';
-import { getPokemonByName, getAllPokemons} from "../../redux/actions";
+import { getPokemonByName } from "../../redux/actions";
 import style from "./SearchBar.module.css"
 
 const SearchBar = () => {
@@ -8,6 +8,7 @@ const SearchBar = () => {
   const [ pokemonName, setPokemonName ] = useState("")
 
   const handleChange = (event) =>{
+    event.preventDefault();
     setPokemonName(event.target.value);
   }
 
@@ -15,13 +16,10 @@ const SearchBar = () => {
     event.preventDefault();
     if (pokemonName.length > 0) {
       dispatch(getPokemonByName(pokemonName.toLocaleLowerCase()));
+      console.log(pokemonName)
       setPokemonName('');
+      console.log(setPokemonName)
     }
-  }
-
-  const handleReset = (event) => {
-    event.preventDefault()
-    dispatch(getAllPokemons())
   }
 
   return (
@@ -38,7 +36,6 @@ const SearchBar = () => {
         </div>
         <div className={style.DivButton}>
           <button type="submit" className={style.SearchBarButton}>Search</button>
-          <button className={style.ResetButton} onClick={event => handleReset(event)}>Reset</button>
         </div>
       </form> 
     </div>
