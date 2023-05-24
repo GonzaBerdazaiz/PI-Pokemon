@@ -63,39 +63,3 @@ const getPokemonsByName = async(name)=>{
 }
 
 module.exports = getPokemonsByName;
-
-// DTO --> Data Transfer Object
-
-// DTOs are used to transfer data between client and server
-
-// LLAMADA A API --> []
-// LLAMADA A BASE DE DATOS --> []
-
-//CASO NO ENCONTRAR NADA: Devolvemos
-//return 'No se encontraron resultados';
-
-// CASO ENCONTRAR POKEMONS
-//return [1, 2];
-
-// UNIFICAR NUESTRA RESPUESTO --> DTO
-
-//   const DBPokemons = [];
-//   const APIPokemons = [];
-
-//   if (pokemons.length < 0) {
-//     response.message = 'No se encontraron resultados.';
-//   } else {
-//     response.message = 'Pokemons encontrados'
-//     response.data = pokemons
-//   }
-
-//   return response;
-// };
-
-
-// EL FRONT HACE ESTO
-
-// const getPokemons = GET pokemons/?name=poke
-//if(pokemons.data.length < 0) {
-  //mostras getPokemons.message
-//getPokemons.data.map(/RENDERIZO CARDS/)
