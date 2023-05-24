@@ -91,6 +91,3 @@ const reducer = (state = initialState, action) =>{
 };
 
 export default reducer;
-
-//El reducer es una funcion que es quien sabe que hacerle al estado global. Lo recibe y recibe la action que dice que hacer
-//para que finalmente se ejecuten estas funciones, debemos montarlas en el HOME
