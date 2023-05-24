@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import {getPokemonDetail, clearDetail} from "../../redux/actions";
@@ -11,17 +11,28 @@ const Detail =() =>{
     const {id} = useParams();
     const dispatch = useDispatch();
     const detail = useSelector(state=>state.detail);
+    const [loading, setLoading] = useState(true);
 
     useEffect (()=>{
         dispatch(getPokemonDetail(id))
+        .then(() => setLoading(false))
+        .catch(() => setLoading(false))
         dispatch(clearDetail())
     },[dispatch,id])
 
     return (
         <div className={style.DetailContainer}>
-            {!detail.name ? (
+            {loading?(
                 <Loading></Loading>
-            ):(
+            ): !detail.id ? (
+            <div> 
+              <h1 className={style.PokemonNotFounded}>That Pokemon doesn't exist</h1>
+              <img src="https://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Free-Download.png" id="bola5" alt=""></img>
+              <img src="https://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Free-Download.png" id="bola6" alt=""></img>
+              <img src="https://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Free-Download.png" id="bola7" alt=""></img>
+              <img src="https://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Free-Download.png" id="bola8" alt=""></img>
+            </div>
+            ) : (
                 <div>
                     <div className={style.Detalles}> 
                         <img className={style.DetailImage}src={detail.image ? detail.image : "https://assets.pokemon.com/assets/cms2/img/pokedex/full/201.png"} alt="imagen"/>

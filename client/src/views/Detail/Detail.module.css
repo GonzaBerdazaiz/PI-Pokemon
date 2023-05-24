@@ -174,3 +174,46 @@
     cursor: pointer;
     transition: 0.5s ease;
 }
+
+/* ---------------------POKEMON NOT FOUNDED */
+.PokemonNotFounded{
+    position:absolute;
+    left:37%;
+    top: 40%;
+    width: 300px;
+    font-size: 18px;
+    text-align: center;
+    color: #2f3237;
+    background-color: white;
+    height: 100px;
+    text-align: center;
+    padding: 15px;
+    padding-top: 30px;;
+    border: 6px solid black;
+    border-style: double;
+}
+
+img[id="bola5"]{
+    position:absolute;
+    left:35.3%;
+    top: 40%;
+    height: 30px;
+}
+img[id="bola6"]{
+    position:absolute;
+    left:35.3%;
+    top: 64.5%;
+    height: 30px;
+}
+img[id="bola7"]{
+    position:absolute;
+    left:61.5%;
+    top: 40%;
+    height: 30px;
+}
+img[id="bola8"]{
+    position:absolute;
+    left:61.5%;
+    top: 64.5%;
+    height: 30px;
+}
