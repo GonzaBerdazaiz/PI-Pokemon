@@ -12,17 +12,16 @@ const initialState = {
     pokemons: [],
     allTypes: [],
     detail: [],
-    pokemonFiltered: [],
 }
 
 const reducer = (state = initialState, action) =>{
-    switch (action.type) { //switch que evalua el action type
+    switch (action.type) {
         case GET_ALL_POKEMONS:
             return { 
                 ...state, allPokemons: action.payload, pokemons: action.payload};
         case GET_POKEMON_BY_NAME:
             return { 
-                ...state, pokemons: [action.payload] };
+                ...state, pokemons: action.payload.data};
         case GET_POKEMON_DETAIL:
             return { ...state, detail: action.payload};
         case CLEAR_DETAIL:
@@ -51,44 +50,40 @@ const reducer = (state = initialState, action) =>{
             };
             
         case ORDER_POKEMON:
-            const orderPokemons = [...state.allPokemons];
+            const allPokemonsCopy = [...state.allPokemons];
             let order;
             switch (action.payload) {
-                case "all":
-                    order = orderPokemons.sort((a, b) => {
-                        if(a.id > b.id) return 1
-                        if(b.id > a.id) return -1;
-                        return 0
-                    })
-                break;
+                // case "all":
+                //     order = allPokemonsCopy;
+                // break;
                 case "asc":
-                    order = orderPokemons.sort((a, b) => {
+                    order = allPokemonsCopy.sort((a, b) => {
                         if(a.name > b.name) return 1
                         if(b.name > a.name) return -1;
                         return 0
                     })
                 break;
                 case "des":
-                    order = orderPokemons.sort((a, b) => {
+                    order = allPokemonsCopy.sort((a, b) => {
                         if(b.name > a.name) return 1
                         if(a.name > b.name) return -1;
                         return 0
                     })
                 break;
                 case "wea":
-                    order = orderPokemons.sort((a, b) => {
+                    order = allPokemonsCopy.sort((a, b) => {
                         return a.attack - b.attack;
                     })
                 break;
                 case "str":
-                    order = orderPokemons.sort((a, b) => {
+                    order = allPokemonsCopy.sort((a, b) => {
                         return b.attack - a.attack;
                     })
                 break;
                 default:
-                    order = orderPokemons;
+                    order = allPokemonsCopy;
             }
-            return {...state, pokemons: order, allPokemons: order};
+            return {...state, pokemons: order};
             
         default:
             return { ...state };

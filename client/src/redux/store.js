@@ -5,13 +5,11 @@ import reducer from "./reducer";
 const composeEnhancers =
   (typeof window !== "undefined" &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
-  compose; //para conectar con la extensión del navegador => REDUX DEVTOOLS
+  compose;
 
 const store = createStore(
   reducer,
-  composeEnhancers(applyMiddleware(thunk)) // para poder hacer peticiones a un server
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 export default store;
-
-//REDUX NOS FACILITA UN ESTADO GLOBAL

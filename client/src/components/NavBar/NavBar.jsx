@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 import style from "./NavBar.module.css";
 
-const NavBar = () => {
+const NavBar = ({setCurrentPage}) => {
 
   return (
     <nav className={style.navContainer}>
@@ -18,7 +18,7 @@ const NavBar = () => {
         </div>
       </div>
       <div className={style.middleSection} >
-        <SearchBar/>
+        <SearchBar setCurrentPage={setCurrentPage}/>
       </div>
       {/* <div className={style.RightContainer}>
         <Link to="/contact" className={style.Contacto}>

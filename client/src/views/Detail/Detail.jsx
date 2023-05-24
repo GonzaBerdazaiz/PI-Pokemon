@@ -5,7 +5,6 @@ import {getPokemonDetail, clearDetail} from "../../redux/actions";
 import { Link } from "react-router-dom";
 import style from "./Detail.module.css";
 import Loading from "../../components/Loading/Loading";
-//import { tipos } from "../../components/Types/Types";
 
 const Detail =() =>{
 
@@ -37,13 +36,6 @@ const Detail =() =>{
                         <div className={style.TypeWeightHeight}>
                             <p className={style.DetailTypes}> 
                                 {detail.types?.map((v) => v.name).join(' / ')}
-                                {/* {Array.isArray(detail.types) ? (
-                                    detail.types?.map((type, typeIndex) => {
-                                        return <img src={tipos[type]} alt="types" key={typeIndex}/>;
-                                    })
-                                ) : (
-                                    <span>Type</span>
-                                )} */}
                                 <span className={style.LettersTypeWeightHeight}>Type</span>
                             </p>
                             <p className={style.DetailWeight}>

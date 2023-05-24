@@ -10,6 +10,8 @@ const Pagination = ({
     
   const pageNumbers = Math.ceil(totalPokemons / pokemonsPerPage);
 
+  //Esta funcion nos va a permitir generar los botones del paginado. start y end nos permiten que el valor max del rango no supere 1 o el
+  //num total de paginas. 
   const renderPageNumbers = () => {
     const buttons = [];
     const start = Math.max(currentPage - 1, 1);

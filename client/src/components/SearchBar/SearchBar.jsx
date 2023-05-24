@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { getPokemonByName } from "../../redux/actions";
 import style from "./SearchBar.module.css"
 
-const SearchBar = () => {
+const SearchBar = ({ setCurrentPage }) => {
   const dispatch = useDispatch()
   const [ pokemonName, setPokemonName ] = useState("")
 
