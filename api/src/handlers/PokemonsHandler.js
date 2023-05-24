@@ -14,12 +14,12 @@ const allPokemonsHandler = async(req,res)=>{
 }
 
 const pokemonCreatedHandler = async (req,res) => {
-    const { name, hp, attack, defense, speed, height, weight, types } = req.body
+    const { name, hp, attack, defense, speed, height, weight, image, types } = req.body
     try { 
         if(!name || !hp || !attack || !defense || !speed || !height || !weight || !types){
             throw Error ("There's some Pokemon information is missing")
         } else {
-            const newPokemon = await pokemonCreated(name, hp, attack, defense, speed, height, weight, types);
+            const newPokemon = await pokemonCreated(name, hp, attack, defense, speed, height, weight, image, types);
             res.status(200).json(newPokemon);
         }
     } catch (error) {
