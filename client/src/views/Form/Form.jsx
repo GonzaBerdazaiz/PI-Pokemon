@@ -18,6 +18,7 @@ const Form = () =>{
         name:"",
         hp:"",
         attack:"",
+        image:"",
         defense:"",
         speed:"",
         height:"",
@@ -29,6 +30,7 @@ const Form = () =>{
         name:"",
         hp:"",
         attack:"",
+        image:"",
         defense:"",
         speed:"",
         height:"",
@@ -154,13 +156,14 @@ const Form = () =>{
                             </div>
                         </div>
                         <div className={style.ImageTextContainer}>
-                            <label htmlFor="imagen">Image</label>
+                            <label htmlFor="image">Image</label>
                             <input 
                                 type="text"
                                 name="image"
                                 size="25"
                                 placeholder="Coloque una url"
                                 autoComplete="off"
+                                value={form.image}
                                 onChange={changeHandler}/>
                         </div>
                         <div className={style.TypesContainer}>

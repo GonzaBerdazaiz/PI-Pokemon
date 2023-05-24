@@ -3,6 +3,7 @@
     align-items: center;
     border-left: 2px solid silver;
     border-right: 2px solid silver;
+    flex-direction: row;
 }
 
 .SearchBar input.SearchInput {
@@ -18,15 +19,34 @@
     text-decoration: none;
     border: none;
     border-radius: 3px;
-    margin-left: 25%;
+
     background-color: white;
     font-size: 14px;
     padding: 10px 10px;
     text-align: center;
     display: inline-block;
-    width: 100%;
+    width: 50%;
   }
   .SearchBarButton:hover {
+    scale: 1.2;
+    background-color: rgba(246,165,86,255);
+    color: white;
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+  .ResetButton {
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+
+    background-color: white;
+    font-size: 14px;
+    padding: 10px 10px;
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+  }
+  .ResetButton:hover {
     scale: 1.2;
     background-color: rgba(246,165,86,255);
     color: white;
