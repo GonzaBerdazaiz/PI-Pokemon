@@ -27,7 +27,7 @@ const getPokemonsByNameApi = async(name) =>{
             response.push({
                 id: filteredByNamePokemons.data.id,
                 name: filteredByNamePokemons.data.name,
-                image: filteredByNamePokemons.data.sprites.other.dream_world.front_default,
+                image: filteredByNamePokemons.data.sprites.front_default,
                 hp: filteredByNamePokemons.data.stats[0].base_stat,
                 attack: filteredByNamePokemons.data.stats[1].base_stat,
                 defense: filteredByNamePokemons.data.stats[2].base_stat,

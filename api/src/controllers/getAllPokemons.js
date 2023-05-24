@@ -25,7 +25,7 @@ const getPokemonApi = async()=>{
     }));
     return pokemonList;
 }
-   
+    
 //TRAEMOS POKEMON DE LA BD
 const getPokemonDB = async()=>{ 
     const dbPokemon = await Pokemon.findAll({
