@@ -9,7 +9,7 @@ const allPokemonsHandler = async(req,res)=>{
         const response = name ? await getPokemonsByName(name) : await getAllPokemons();
         res.status(200).json(response);
     }catch(error){
-        res.status(400).json({error: error.message});
+        res.status(400).send(error.message);;
     }
 }
 

@@ -44,22 +44,12 @@ const getPokemonsByNameApi = async(name) =>{
 }
 
 const getPokemonsByName = async(name)=>{
-    const response = {
-        data: [],
-        message: '',
-        status: 200,
-    };
+
     const DBPokemons = await getPokemonsByNameBD(name);
     const APIPokemons = await getPokemonsByNameApi(name);
     
-    const pokemons = [...DBPokemons, ...APIPokemons];
-    if (response.length === 0) {
-        response.message = 'No se encontraron resultados.';
-    } else {
-        response.message = 'Pokemons encontrados'
-        response.data = pokemons;
-    }
-    return response;
+    const pokemonsName = [...DBPokemons, ...APIPokemons];
+    return pokemonsName
 }
 
 module.exports = getPokemonsByName;
