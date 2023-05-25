@@ -53,7 +53,7 @@ const getPokemonsByName = async(name)=>{
     const APIPokemons = await getPokemonsByNameApi(name);
     
     const pokemons = [...DBPokemons, ...APIPokemons];
-    if (response.length < 0) {
+    if (response.length === 0) {
         response.message = 'No se encontraron resultados.';
     } else {
         response.message = 'Pokemons encontrados'
