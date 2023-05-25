@@ -15,16 +15,14 @@ const NavBar = ({setCurrentPage}) => {
           <Link to="/create" className={style.link}>
             Create
           </Link>
+          <Link to="/about" className={style.About}>
+            About
+          </Link>
         </div>
       </div>
       <div className={style.middleSection} >
         <SearchBar setCurrentPage={setCurrentPage}/>
       </div>
-      {/* <div className={style.RightContainer}>
-        <Link to="/contact" className={style.Contacto}>
-          Contact
-        </Link>
-      </div> */}
     </nav>
   );
 };

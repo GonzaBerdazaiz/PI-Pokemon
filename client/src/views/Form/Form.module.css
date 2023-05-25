@@ -1,6 +1,6 @@
 .PageContainer {
     padding-top: 80px;
-    background-image: url("../assets.img/fondo.jpg");
+    background-image: url("../assets.img/lab2.jpg");
     background-size: cover;
     background-attachment: fixed;
     height: calc(100vh - 80px);

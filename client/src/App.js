@@ -2,7 +2,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect} from "react"
 import NavBar from "./components/NavBar/NavBar";
-import {Landing, Home, Form, Contacto, Detail} from "./views";
+import {Landing, Home, Form, About, Detail} from "./views";
 import style from "./App.module.css";
 import { getAllPokemons, getAllTypes } from "./redux/actions";
 
@@ -26,7 +26,7 @@ useEffect(()=>{ //para manejar el ciclo de vida del componente. Cuando se monta 
         <Route path="/home" element={<Home />}></Route>
         <Route path="/detail/:id" element={<Detail />}></Route>
         <Route path="/create" element={<Form />}></Route>
-        <Route path="/contact" element={<Contacto />}></Route>
+        <Route path="/about" element={<About />}></Route>
       </Routes>
     </div>
   );

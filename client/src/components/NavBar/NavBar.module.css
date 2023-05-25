@@ -53,14 +53,14 @@
   align-items: center;
 }
 
-.Contacto {
+.About {
   text-decoration: none;
   margin-right: 20px;
   color: #333;
   padding: 30px;
   transition: color 0.5s ease;
 }
-.Contacto:hover {
+.About:hover {
   background-color: rgba(246,165,86,255);
   transition: color 0.5s ease;
   color: white;

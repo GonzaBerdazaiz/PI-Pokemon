@@ -13,17 +13,13 @@ const SearchBar = ({ setCurrentPage }) => {
     setPokemonName(event.target.value);
   }
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) =>{
     event.preventDefault();
     if (pokemonName.length > 0) {
-      const response = await dispatch(getPokemonByName(pokemonName.toLocaleLowerCase()));
-      if (response && response.data) {
-        setPokemonName('');
-      } else {
-        alert('Error: Pokemon not founded');
-      }
+      dispatch(getPokemonByName(pokemonName.toLocaleLowerCase()));
+      setPokemonName('');
     }
-  };
+  }
 
   const handleReset = (event) => {
     event.preventDefault()
