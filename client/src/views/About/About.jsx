@@ -10,7 +10,7 @@ const Contacto = () =>{
                     <img src="https://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Free-Download.png" id="bola12" alt=""></img>
                 <h1 className={style.TituloAbout}>Gonzalo Berdazaiz</h1>
                 <br></br>
-                <span className={style.IntroAbout}>Industrial Engineer studying to be a Full stack developer</span>
+                <span className={style.IntroAbout}>Industrial Engineer studying to be a full stack developer</span>
             </section>
             <section className={style.descriptionAboutContainer}>
                 <h2 className={style.AboutMe}>About me...</h2>

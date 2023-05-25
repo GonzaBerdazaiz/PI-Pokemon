@@ -1,12 +1,9 @@
 .DetailContainer{
     background-image: url(../assets.img/fondo-pasto.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+    padding-top: 80px; 
     background-size: cover;
-    width: 100%;
-    max-width: 100%;
-    min-height: 100vh;
+    background-attachment: fixed;
+    height: calc(100vh - 80px);
 }
 
 .Detalles{

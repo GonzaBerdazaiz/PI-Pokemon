@@ -75,6 +75,7 @@ const Form = () =>{
                     <img src="https://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Free-Download.png" id="bola2" alt=""></img>
                     <img src="https://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Free-Download.png" id="bola3" alt=""></img>
                     <img src="https://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Free-Download.png" id="bola4" alt=""></img>
+                    <img src="https://thumbs.gfycat.com/DampSpanishCleanerwrasse-size_restricted.gif" id="gifPokebola" alt=""></img>
                     <form onSubmit={submitHandler} className={style.Container}>
                         <div className={style.NameTextContainer}>
                             <label htmlFor="name">Name: </label>

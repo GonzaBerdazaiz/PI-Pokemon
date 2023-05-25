@@ -7,6 +7,7 @@ const NavBar = ({setCurrentPage}) => {
   return (
     <nav className={style.navContainer}>
       <div className={style.leftSection}>
+      <img src="https://i.pinimg.com/originals/47/14/28/47142839defcb4270fffff88cf9f082b.gif" id="gifPikachu" alt="gifPikachu"></img>
         <div className={style.image} />
         <div className={style.LeftContainer}>
           <Link to="/home" className={style.link}>

@@ -21,13 +21,14 @@ const reducer = (state = initialState, action) =>{
                 ...state, allPokemons: action.payload, pokemons: action.payload};
         case GET_POKEMON_BY_NAME:
             return { 
-                ...state, pokemons: action.payload.data};
+                ...state, pokemons: action.payload};
         case GET_POKEMON_DETAIL:
             return { ...state, detail: action.payload};
         case CLEAR_DETAIL:
             return { ...state, detail: {} };
         case GET_ALL_TYPES:
             return { ...state, allTypes: action.payload};
+            
         case FILTER_TYPE: 
             let allPokemonsType = [...state.allPokemons];
             let typeFiltered = 
@@ -53,9 +54,6 @@ const reducer = (state = initialState, action) =>{
             const allPokemonsCopy = [...state.allPokemons];
             let order;
             switch (action.payload) {
-                // case "all":
-                //     order = allPokemonsCopy;
-                // break;
                 case "asc":
                     order = allPokemonsCopy.sort((a, b) => {
                         if(a.name > b.name) return 1

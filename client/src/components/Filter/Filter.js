@@ -7,14 +7,14 @@ const Filter = ({ setCurrentPage }) => {
     const dispatch = useDispatch();
     const allTypes = useSelector(state=>state.allTypes)
 
-    const handlerFilterBySource = (event) => {
-        dispatch(filterBySource(event.target.value));
-        setCurrentPage(1)
-    };
-
     const filterType = (event) => {
         event.preventDefault();
         dispatch(filterPokemon(event.target.value));
+        setCurrentPage(1)
+    };  
+
+    const handlerFilterBySource = (event) => {
+        dispatch(filterBySource(event.target.value));
         setCurrentPage(1)
     };
 

@@ -7,13 +7,10 @@
 }
 .container{
   background-image: url(../../views/assets.img/fondo-pasto.jpg);
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  max-width: 100%;
-  min-height: 100vh;
+  padding-top: 80px; 
+    background-size: cover;
+    background-attachment: fixed;
+    height: calc(100vh - 80px);
 }
 
 /* h1{

@@ -18,6 +18,7 @@ const SearchBar = ({ setCurrentPage }) => {
     if (pokemonName.length > 0) {
       dispatch(getPokemonByName(pokemonName.toLocaleLowerCase()));
       setPokemonName('');
+      setCurrentPage(1)
     }
   }
 
