@@ -95,55 +95,41 @@
     font-size: 12px;
 }
 
-.AttackContainer{
-    color:dimgrey;
-    height: 10%;
+/* ---------------------STATS */
+.StatsArea{
+    position: absolute;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-left: 10%;
+    height: 30%;
+    top:60%;
 }
-/* .AttackIcon{
-    width: 20px; 
-    display: flex;
-    height: auto; 
-    margin-right: 5px;
-    top: 57.5%;
-    justify-content: center;
-} */
-
-.DefenseContainer{
-    color:dimgrey;
-    height: 10%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.menu{
+    position: relative;
+    border:solid 1px rgba(27,237,187,255);
+    height: 3px;
+    border-radius: 5px;
+    width: 50%;
+    margin-bottom: 30px;
 }
-/* .DefenseIcon{
-    width: 20px; 
-    display: flex;
-    height: auto; 
-    margin-right: 5px;
-    top: 67.5%;
-    justify-content: center;
-} */
-
-.SpeedContainer{
-    color:dimgrey;
-    height: 10%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.prueba{
+    position: absolute;
+    background-color: rgba(27,237,187,255);
+    height: 4px;
+    border-radius: 2px 0 0 2px;
 }
-/* .SpeedIcon {
-    width: 20px; 
-    display: flex;
-    height: auto; 
-    margin-right: 5px; 
-    top: 78.5%;
-    justify-content: center;
-} */
-
+.SpanStatsAreaName{
+    height: 50%;
+    width: 100%;
+    font-size: 13px;
+}
 .IdContainer {
+    position: absolute;
+    top: 86%;
+    left: 43%;
     color:dimgrey;
     height: 10%;
     display: flex;
@@ -151,12 +137,15 @@
     justify-content: center;
 }
 
+/* ---------------------BUTTON */
 .BackHome{
     display: flex;
     justify-content: center;
 }
 .BomeButton{
     display: block;
+    position: absolute;
+    top: 95%;
     width: 40px;
     height: 40px;
     border-radius: 50%;

@@ -58,21 +58,20 @@ const Detail =() =>{
                                 <span className={style.LettersTypeWeightHeight}>Height</span>
                             </p>
                         </div>
-                        <div className={style.AttackContainer}>
-                            {/* <img src="https://www.pngitem.com/pimgs/m/178-1789882_sword-fighting-attack-icon-png-transparent-png.png" alt="png" className={style.AttackIcon}></img> */}
-                            <p className={style.DetailAttack}> Attack: {detail.attack}</p>
-                        </div>
-                        <div className={style.DefenseContainer}>
-                            {/* <img src="https://png.pngtree.com/png-clipart/20200311/ourmid/pngtree-shield-gray-and-white-png-image_2133647.jpg" alt="png" className={style.DefenseIcon}></img> */}
-                            <p className={style.DetailDefense}> Defense: {detail.defense}</p>
-                        </div>
-                        <div className={style.SpeedContainer}>
-                            {/* <img src="https://cdn.onlinewebfonts.com/svg/img_81086.png" alt="png" className={style.SpeedIcon}></img> */}
-                            <p className={style.DetailSpeed}> Speed: {detail.speed}</p>
-                        </div>    
-                        <div className={style.IdContainer}>
-                            <p className={style.DetailId}> # {detail.id} </p>
+                        <div className={style.StatsArea}>
+                            <div className={style.menu}><div className={style.prueba} style={{ width:`${detail.attack / 150 * 100}%`}}></div>   
+                            <span className={style.SpanStatsAreaName}> Attack: {detail.attack}</span>
+                            </div>
+                            <div className={style.menu}><div className={style.prueba} style={{ width:`${detail.defense / 200 * 100}%`}}></div>
+                            <span className={style.SpanStatsAreaName}> Defense: {detail.defense}</span>
+                            </div>
+                            <div className={style.menu}><div className={style.prueba} style={{ width:`${detail.speed / 180 * 100}%`}}></div>    
+                            <span className={style.SpanStatsAreaName}> Speed: {detail.speed}</span>
+                            </div>
                         </div> 
+                        <div className={style.IdContainer}>
+                            <p> # {detail.id} </p>
+                        </div>    
                         <Link to='/home' className={style.BackHome}><button className={style.BomeButton}>X</button></Link>                           
                     </div>
                 </div>
