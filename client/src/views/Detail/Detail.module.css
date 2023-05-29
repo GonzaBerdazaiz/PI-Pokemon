@@ -34,7 +34,6 @@
     display: flex;
     justify-content: space-around;
 }
-
 .DetailName {
     position: relative;
     top: 10%;
@@ -55,7 +54,7 @@
     margin-left: 25%;;
     width: 50%;
     height: 1%;
-    }
+}
 .DetailHpSpan{
     height: 50%;
     width: 100%;
@@ -127,9 +126,8 @@
     font-size: 13px;
 }
 .IdContainer {
-    position: absolute;
-    top: 86%;
-    left: 43%;
+    position: relative;
+    top:28%;
     color:dimgrey;
     height: 10%;
     display: flex;
